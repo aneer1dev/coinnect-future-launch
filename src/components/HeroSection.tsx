@@ -114,17 +114,10 @@ const HeroSection = () => {
         </div>
       </div>
 
-      {/* Floating Elements */}
+      {/* Floating Elements - Removed the overlapping "Level 5 Achieved!" */}
       <div className="absolute top-16 left-8 glass-card p-3 floating delay-100 hidden xl:block">
         <div className="w-6 h-6 bg-neon-green rounded-lg mb-1"></div>
         <p className="text-xs text-gray-300">+12% this week</p>
-      </div>
-
-      <div className="absolute bottom-24 right-8 glass-card p-3 floating delay-200 hidden xl:block">
-        <div className="flex items-center space-x-2">
-          <div className="w-5 h-5 bg-electric-blue rounded-full"></div>
-          <span className="text-xs text-white">Level 5 Achieved!</span>
-        </div>
       </div>
 
       <div className="absolute top-1/2 left-4 glass-card p-2 floating delay-400 hidden xl:block">

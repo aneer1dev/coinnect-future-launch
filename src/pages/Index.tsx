@@ -25,9 +25,6 @@ const Index = () => {
       <section id="gamification">
         <GamificationSection />
       </section>
-      <section id="community">
-        <WaitlistSection />
-      </section>
       <section id="waitlist">
         <WaitlistSection />
       </section>

@@ -5,7 +5,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
-/* Coinnect Design System - Enhanced with Size Optimization */
+/* Coinnect Design System - Dark Mode Only */
 
 @layer base {
   :root {
@@ -39,26 +39,21 @@
     
     --radius: 0.5rem;
 
-    /* Theme Variables */
+    /* Dark Mode Only Variables */
     --bg-primary: #0A0A0A;
     --bg-secondary: #1A1A1A;
+    --bg-tertiary: #2A2A2A;
     --text-primary: #FFFFFF;
     --text-secondary: rgba(255, 255, 255, 0.7);
+    --text-muted: rgba(255, 255, 255, 0.5);
     --accent-blue: #0066FF;
     --accent-green: #00FF88;
+    --accent-purple: #6B46C1;
+    --accent-amber: #F59E0B;
     --glass-bg: rgba(255, 255, 255, 0.1);
-    --border-color: rgba(255, 255, 255, 0.2);
-  }
-
-  [data-theme="light"] {
-    --bg-primary: #FFFFFF;
-    --bg-secondary: #F8F9FA;
-    --text-primary: #1A1A1A;
-    --text-secondary: rgba(26, 26, 26, 0.7);
-    --accent-blue: #0066FF;
-    --accent-green: #00C851;
-    --glass-bg: rgba(255, 255, 255, 0.8);
-    --border-color: rgba(0, 0, 0, 0.1);
+    --glass-border: rgba(255, 255, 255, 0.2);
+    --shadow-primary: rgba(0, 0, 0, 0.3);
+    --shadow-secondary: rgba(0, 0, 0, 0.1);
   }
 }
 
@@ -74,6 +69,7 @@
     background-image: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
     min-height: 100vh;
     transition: all 0.3s ease;
+    font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
   }
 
   /* Smooth scrolling */
@@ -115,14 +111,14 @@
     transition: transform 0.1s ease;
   }
 
-  /* Hero Section Spacing Fix - Reduced Size */
+  /* Hero Section - Reduced Size */
   .hero-section {
-    @apply pt-24 pb-16;
-    margin-top: 0;
-    min-height: calc(100vh - 0px);
+    @apply pt-20 pb-16;
+    margin-top: 100px;
+    min-height: 80vh;
   }
 
-  /* Professional Navigation - Enhanced */
+  /* Professional Navigation - Optimized */
   .glass-nav {
     @apply backdrop-blur-glass border border-glass-border rounded-xl;
     background: rgba(10, 10, 10, 0.8);
@@ -149,18 +145,21 @@
     transform: translateY(-1px);
   }
 
-  /* iPhone Mockup - Reduced Size */
+  /* iPhone Mockup - Reduced Size for App Demo Section */
   .iphone-mockup {
     @apply relative;
-    width: 280px;
-    height: 560px;
+    width: 240px;
+    height: 480px;
     background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-    border-radius: 22px;
-    padding: 12px;
+    border-radius: 18px;
+    padding: 10px;
     box-shadow: 
       0 16px 32px rgba(0, 0, 0, 0.3),
       0 0 0 1px rgba(255, 255, 255, 0.1);
     transition: transform 0.3s ease;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000px;
   }
 
   .iphone-mockup:hover {
@@ -168,7 +167,7 @@
   }
 
   .hero-phone {
-    transform: scale(0.85);
+    transform: scale(0.9);
   }
 
   .interactive-demo {
@@ -176,10 +175,10 @@
   }
 
   .iphone-screen {
-    width: 256px;
-    height: 512px;
+    width: 220px;
+    height: 440px;
     background: #000;
-    border-radius: 18px;
+    border-radius: 16px;
     overflow: hidden;
     position: relative;
   }
@@ -187,9 +186,9 @@
   /* Status Bar */
   .status-bar {
     @apply flex items-center justify-between px-3 py-1 text-white;
-    height: 24px;
+    height: 20px;
     background: rgba(0, 0, 0, 0.9);
-    font-size: 11px;
+    font-size: 10px;
   }
 
   .signal-bars {
@@ -208,8 +207,8 @@
   .bar:nth-child(4) { height: 9px; }
 
   .battery {
-    width: 18px;
-    height: 9px;
+    width: 16px;
+    height: 8px;
     border: 1px solid #fff;
     border-radius: 2px;
     position: relative;
@@ -221,7 +220,7 @@
     right: -2px;
     top: 2px;
     width: 1px;
-    height: 5px;
+    height: 4px;
     background: #fff;
     border-radius: 1px;
   }
@@ -235,19 +234,19 @@
 
   /* Screen Content */
   .screen-content {
-    height: calc(100% - 88px);
+    height: calc(100% - 80px);
     overflow-y: auto;
     position: relative;
   }
 
   .screen-container {
-    @apply p-3 space-y-3;
+    @apply p-2 space-y-2;
     height: 100%;
-    font-size: 13px;
+    font-size: 11px;
   }
 
   .screen-header {
-    @apply mb-4;
+    @apply mb-3;
   }
 
   .screen-transition {
@@ -261,7 +260,7 @@
     bottom: 0;
     left: 0;
     right: 0;
-    height: 64px;
+    height: 60px;
     background: rgba(0, 0, 0, 0.95);
     backdrop-filter: blur(20px);
     display: flex;
@@ -272,8 +271,10 @@
 
   .nav-tab {
     @apply flex flex-col items-center justify-center gap-1 p-1 rounded-lg transition-all duration-300 cursor-pointer;
-    min-width: 40px;
-    font-size: 10px;
+    min-width: 36px;
+    font-size: 9px;
+    transform: translateZ(0);
+    backface-visibility: hidden;
   }
 
   .nav-tab.active {
@@ -286,27 +287,27 @@
 
   /* App Screen Components - Reduced Sizes */
   .balance-card {
-    @apply bg-gradient-to-r from-electric-blue/20 to-neon-green/20 p-3 rounded-lg mb-3;
+    @apply bg-gradient-to-r from-electric-blue/20 to-neon-green/20 p-2 rounded-lg mb-2;
   }
 
   .quick-actions {
-    @apply flex gap-2 mb-3;
+    @apply flex gap-1 mb-2;
   }
 
   .action-btn {
-    @apply flex-1 bg-gray-800 text-white py-2 px-3 rounded-lg text-xs font-medium;
+    @apply flex-1 bg-gray-800 text-white py-1 px-2 rounded-lg text-xs font-medium;
   }
 
   .transactions-list {
-    @apply space-y-2 mb-4;
+    @apply space-y-1 mb-3;
   }
 
   .transaction-item {
-    @apply flex items-center space-x-2 p-2 bg-gray-800/50 rounded-lg;
+    @apply flex items-center space-x-1 p-1 bg-gray-800/50 rounded-lg;
   }
 
   .emoji {
-    @apply text-sm;
+    @apply text-xs;
   }
 
   .xp-progress {
@@ -314,7 +315,7 @@
   }
 
   .progress-bar {
-    @apply w-full bg-gray-700 rounded-full h-1.5;
+    @apply w-full bg-gray-700 rounded-full h-1;
   }
 
   .progress-bar.small {
@@ -325,129 +326,19 @@
     @apply bg-gradient-to-r from-electric-blue to-neon-green h-full rounded-full transition-all duration-500;
   }
 
-  .category-grid {
-    @apply grid grid-cols-4 gap-2 mb-4;
-  }
-
-  .category-btn {
-    @apply flex flex-col items-center gap-1 p-2 bg-gray-800/50 rounded-lg transition-all duration-200;
-  }
-
-  .category-btn.active {
-    @apply bg-electric-blue/20 border border-electric-blue/50;
-  }
-
-  .amount-input {
-    @apply mb-4;
-  }
-
-  .input-wrapper {
-    @apply flex items-center bg-gray-800 rounded-lg p-2 mt-1;
-  }
-
-  .currency {
-    @apply text-gray-400 mr-1 text-sm;
-  }
-
-  .amount-field {
-    @apply bg-transparent text-white text-sm font-semibold outline-none flex-1;
-  }
-
-  .primary-button {
-    @apply w-full bg-electric-blue text-white py-3 rounded-lg font-semibold mb-3 text-sm;
-  }
-
-  .daily-total {
-    @apply text-center p-2 bg-gray-800/30 rounded-lg;
-  }
-
-  .wisdom-feed {
-    @apply space-y-2 mb-4;
-  }
-
-  .wisdom-card {
-    @apply p-3 bg-gray-800/50 rounded-lg;
-  }
-
-  .post-wisdom-btn {
-    @apply w-full bg-neon-green text-black py-2 rounded-lg font-semibold text-sm;
-  }
-
-  .progress-section {
-    @apply mb-4;
-  }
-
-  .lesson-cards {
-    @apply space-y-2 mb-4;
-  }
-
-  .lesson-card {
-    @apply p-3 bg-gray-800/50 rounded-lg;
-  }
-
-  .wallet-section {
-    @apply mb-4;
-  }
-
-  .wallet-balance {
-    @apply text-xl font-bold text-neon-green;
-  }
-
-  .nft-badges {
-    @apply mb-3;
-  }
-
-  .badge-grid {
-    @apply flex gap-1;
-  }
-
-  .nft-badge {
-    @apply w-8 h-8 bg-gradient-to-br from-electric-blue to-neon-green rounded-lg flex items-center justify-center text-sm;
-  }
-
-  .nft-badge.large {
-    @apply w-10 h-10 text-base;
-  }
-
-  .profile-header {
-    @apply flex items-center mb-4;
-  }
-
-  .avatar {
-    @apply w-12 h-12 bg-gradient-to-br from-electric-blue to-neon-green rounded-full flex items-center justify-center text-white font-bold text-lg;
-  }
-
-  .stats-grid {
-    @apply grid grid-cols-2 gap-2 mb-4;
-  }
-
-  .stat-card {
-    @apply text-center p-3 bg-gray-800/50 rounded-lg;
-  }
-
-  .achievements {
-    @apply space-y-2 mb-4;
-  }
-
-  .achievement-bar {
-    @apply space-y-1;
-  }
-
-  .nft-collection {
-    @apply mt-3;
-  }
-
   /* Glass Morphism Base Class */
   .glass {
     background: var(--glass-bg);
     backdrop-filter: blur(20px);
-    border: 1px solid var(--border-color);
+    border: 1px solid var(--glass-border);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
   }
 
   /* Glass Card with Enhanced Effects */
   .glass-card {
     @apply glass rounded-glass p-4 transition-all duration-300;
+    transform: translateZ(0);
+    backface-visibility: hidden;
   }
 
   .glass-card:hover {
@@ -466,9 +357,11 @@
 
   /* Glow Button - Reduced Size */
   .glow-button {
-    @apply relative overflow-hidden bg-electric-blue text-white font-semibold px-6 py-3 rounded-full transition-all duration-300;
+    @apply relative overflow-hidden bg-electric-blue text-white font-semibold px-6 py-2 rounded-full transition-all duration-300;
     box-shadow: 0 4px 20px rgba(0, 102, 255, 0.3);
-    font-size: 14px;
+    font-size: 13px;
+    transform: translateZ(0);
+    backface-visibility: hidden;
   }
 
   .glow-button:hover {
@@ -578,7 +471,7 @@
 
   /* Responsive Container - Reduced Size */
   .container-custom {
-    @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8;
+    @apply max-w-5xl mx-auto px-4 sm:px-6 lg:px-8;
   }
 
   /* Scroll Animation Classes */
@@ -606,46 +499,63 @@
   66% { transform: translateY(5px) rotate(-1deg); }
 }
 
-/* Section Spacing - Reduced */
+/* Section Spacing - Reduced and Optimized */
 section {
-  padding: 48px 0;
-  margin-bottom: 32px;
+  padding: 50px 0;
+  position: relative;
+}
+
+/* Specific Section Styles */
+.app-demo-section {
+  padding: 60px 0;
+  background: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+}
+
+.gamification-section {
+  padding: 60px 0;
+  background: var(--bg-secondary);
+}
+
+.waitlist-section {
+  padding: 80px 0 60px 0;
+  background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
 }
 
 /* Mobile Responsive Styles - Enhanced */
 @media (max-width: 768px) {
   .iphone-mockup {
-    width: 240px;
-    height: 480px;
+    width: 200px;
+    height: 400px;
     transform: scale(1) !important;
   }
 
   .iphone-screen {
-    width: 216px;
-    height: 432px;
+    width: 180px;
+    height: 360px;
   }
 
   .hero-section {
-    @apply pt-20 pb-12;
+    @apply pt-16 pb-12;
+    margin-top: 80px;
   }
 
   .screen-container {
-    @apply p-2 space-y-2;
-    font-size: 12px;
+    @apply p-2 space-y-1;
+    font-size: 10px;
   }
 
   .bottom-nav {
-    height: 56px;
+    height: 50px;
   }
 
   .nav-tab {
     @apply gap-0.5 p-1;
-    min-width: 36px;
-    font-size: 9px;
+    min-width: 32px;
+    font-size: 8px;
   }
 
   .nav-tab span:last-child {
-    font-size: 8px;
+    font-size: 7px;
   }
 
   /* Mobile Typography */
@@ -659,18 +569,55 @@ section {
 
   .glow-button {
     padding: 10px 20px;
-    font-size: 13px;
+    font-size: 12px;
   }
 
   /* Mobile Section Spacing */
   section {
-    padding: 32px 0;
-    margin-bottom: 20px;
+    padding: 40px 0;
   }
 
   .container-custom {
     padding: 0 16px;
   }
+
+  .hero-content {
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  .hero-text {
+    order: 1;
+    text-align: center;
+  }
+  
+  .hero-phone {
+    order: 2;
+  }
+}
+
+/* Performance Optimizations */
+.iphone-mockup,
+.nav-tab,
+.cta-button,
+.feature-card,
+.glow-button,
+.glass-card {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Smooth transitions */
+* {
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Optimize images */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
 /* Reduced Motion */
