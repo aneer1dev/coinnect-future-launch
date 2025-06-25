@@ -77,6 +77,320 @@
 }
 
 @layer components {
+  /* Hero Section Spacing Fix */
+  .hero-section {
+    @apply pt-32 pb-20;
+    margin-top: 0;
+    min-height: calc(100vh - 0px);
+  }
+
+  /* Professional Navigation */
+  .glass-nav {
+    @apply bg-glass-white backdrop-blur-glass border border-glass-border rounded-xl;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+    transition: all 0.3s ease;
+  }
+
+  .glass-nav-scrolled {
+    @apply bg-glass-white/80 border-glass-border/50;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+  }
+
+  .nav-cta-button {
+    @apply bg-electric-blue text-white font-semibold px-6 py-3 rounded-full text-sm transition-all duration-300;
+    box-shadow: 0 4px 16px rgba(0, 102, 255, 0.3);
+  }
+
+  .nav-cta-button:hover {
+    box-shadow: 0 6px 24px rgba(0, 102, 255, 0.5);
+    transform: translateY(-1px);
+  }
+
+  /* iPhone Mockup */
+  .iphone-mockup {
+    @apply relative;
+    width: 320px;
+    height: 640px;
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    border-radius: 25px;
+    padding: 15px;
+    box-shadow: 
+      0 20px 40px rgba(0, 0, 0, 0.3),
+      0 0 0 1px rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease;
+  }
+
+  .iphone-mockup:hover {
+    transform: translateY(-5px);
+  }
+
+  .hero-phone {
+    transform: scale(0.9);
+  }
+
+  .interactive-demo {
+    transform: scale(1.1);
+  }
+
+  .iphone-screen {
+    width: 290px;
+    height: 610px;
+    background: #000;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  /* Status Bar */
+  .status-bar {
+    @apply flex items-center justify-between px-4 py-2 text-white;
+    height: 30px;
+    background: rgba(0, 0, 0, 0.9);
+  }
+
+  .signal-bars {
+    @apply flex items-end space-x-1;
+  }
+
+  .bar {
+    width: 3px;
+    background: #fff;
+    border-radius: 1px;
+  }
+
+  .bar:nth-child(1) { height: 4px; }
+  .bar:nth-child(2) { height: 6px; }
+  .bar:nth-child(3) { height: 8px; }
+  .bar:nth-child(4) { height: 10px; }
+
+  .battery {
+    width: 20px;
+    height: 10px;
+    border: 1px solid #fff;
+    border-radius: 2px;
+    position: relative;
+  }
+
+  .battery::after {
+    content: '';
+    position: absolute;
+    right: -3px;
+    top: 3px;
+    width: 2px;
+    height: 4px;
+    background: #fff;
+    border-radius: 1px;
+  }
+
+  .battery-level {
+    width: 80%;
+    height: 100%;
+    background: #00FF88;
+    border-radius: 1px;
+  }
+
+  /* Screen Content */
+  .screen-content {
+    height: calc(100% - 110px);
+    overflow-y: auto;
+    position: relative;
+  }
+
+  .screen-container {
+    @apply p-4 space-y-4;
+    height: 100%;
+  }
+
+  .screen-header {
+    @apply mb-6;
+  }
+
+  .screen-transition {
+    transition: all 0.3s ease;
+    height: 100%;
+  }
+
+  /* Bottom Navigation */
+  .bottom-nav {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    background: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(20px);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .nav-tab {
+    @apply flex flex-col items-center justify-center gap-1 p-2 rounded-lg transition-all duration-300 cursor-pointer;
+    min-width: 50px;
+  }
+
+  .nav-tab.active {
+    @apply bg-electric-blue/20 text-electric-blue;
+  }
+
+  .nav-tab:not(.active) {
+    @apply text-gray-400;
+  }
+
+  /* App Screen Components */
+  .balance-card {
+    @apply bg-gradient-to-r from-electric-blue/20 to-neon-green/20 p-4 rounded-xl mb-4;
+  }
+
+  .quick-actions {
+    @apply flex gap-3 mb-4;
+  }
+
+  .action-btn {
+    @apply flex-1 bg-gray-800 text-white py-3 px-4 rounded-lg text-sm font-medium;
+  }
+
+  .transactions-list {
+    @apply space-y-3 mb-6;
+  }
+
+  .transaction-item {
+    @apply flex items-center space-x-3 p-3 bg-gray-800/50 rounded-lg;
+  }
+
+  .emoji {
+    @apply text-lg;
+  }
+
+  .xp-progress {
+    @apply mt-auto;
+  }
+
+  .progress-bar {
+    @apply w-full bg-gray-700 rounded-full h-2;
+  }
+
+  .progress-bar.small {
+    @apply h-1.5;
+  }
+
+  .progress-fill {
+    @apply bg-gradient-to-r from-electric-blue to-neon-green h-full rounded-full transition-all duration-500;
+  }
+
+  .category-grid {
+    @apply grid grid-cols-4 gap-3 mb-6;
+  }
+
+  .category-btn {
+    @apply flex flex-col items-center gap-2 p-3 bg-gray-800/50 rounded-lg transition-all duration-200;
+  }
+
+  .category-btn.active {
+    @apply bg-electric-blue/20 border border-electric-blue/50;
+  }
+
+  .amount-input {
+    @apply mb-6;
+  }
+
+  .input-wrapper {
+    @apply flex items-center bg-gray-800 rounded-lg p-3 mt-2;
+  }
+
+  .currency {
+    @apply text-gray-400 mr-2;
+  }
+
+  .amount-field {
+    @apply bg-transparent text-white text-lg font-semibold outline-none flex-1;
+  }
+
+  .primary-button {
+    @apply w-full bg-electric-blue text-white py-4 rounded-lg font-semibold mb-4;
+  }
+
+  .daily-total {
+    @apply text-center p-3 bg-gray-800/30 rounded-lg;
+  }
+
+  .wisdom-feed {
+    @apply space-y-3 mb-6;
+  }
+
+  .wisdom-card {
+    @apply p-4 bg-gray-800/50 rounded-lg;
+  }
+
+  .post-wisdom-btn {
+    @apply w-full bg-neon-green text-black py-3 rounded-lg font-semibold;
+  }
+
+  .progress-section {
+    @apply mb-6;
+  }
+
+  .lesson-cards {
+    @apply space-y-3 mb-6;
+  }
+
+  .lesson-card {
+    @apply p-4 bg-gray-800/50 rounded-lg;
+  }
+
+  .wallet-section {
+    @apply mb-6;
+  }
+
+  .wallet-balance {
+    @apply text-2xl font-bold text-neon-green;
+  }
+
+  .nft-badges {
+    @apply mb-4;
+  }
+
+  .badge-grid {
+    @apply flex gap-2;
+  }
+
+  .nft-badge {
+    @apply w-10 h-10 bg-gradient-to-br from-electric-blue to-neon-green rounded-lg flex items-center justify-center text-lg;
+  }
+
+  .nft-badge.large {
+    @apply w-12 h-12 text-xl;
+  }
+
+  .profile-header {
+    @apply flex items-center mb-6;
+  }
+
+  .avatar {
+    @apply w-16 h-16 bg-gradient-to-br from-electric-blue to-neon-green rounded-full flex items-center justify-center text-white font-bold text-xl;
+  }
+
+  .stats-grid {
+    @apply grid grid-cols-2 gap-3 mb-6;
+  }
+
+  .stat-card {
+    @apply text-center p-4 bg-gray-800/50 rounded-lg;
+  }
+
+  .achievements {
+    @apply space-y-3 mb-6;
+  }
+
+  .achievement-bar {
+    @apply space-y-2;
+  }
+
+  .nft-collection {
+    @apply mt-4;
+  }
+
   /* Glass Morphism Base Class */
   .glass {
     @apply bg-glass-white backdrop-blur-glass border border-glass-border;
@@ -173,6 +487,46 @@
 @keyframes shimmer {
   0% { transform: translateX(-100%); }
   100% { transform: translateX(100%); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+  .iphone-mockup {
+    width: 280px;
+    height: 560px;
+    transform: scale(1) !important;
+  }
+
+  .iphone-screen {
+    width: 250px;
+    height: 500px;
+  }
+
+  .hero-section {
+    @apply pt-24 pb-16;
+  }
+
+  .screen-container {
+    @apply p-3 space-y-3;
+  }
+
+  .bottom-nav {
+    height: 70px;
+  }
+
+  .nav-tab {
+    @apply gap-0.5 p-1;
+    min-width: 45px;
+  }
+
+  .nav-tab span:last-child {
+    font-size: 10px;
+  }
 }
 
 /* Reduced Motion */
