@@ -113,9 +113,9 @@
 
   /* Hero Section - Reduced Size */
   .hero-section {
-    @apply pt-20 pb-16;
-    margin-top: 100px;
-    min-height: 80vh;
+    @apply pt-12 pb-12;
+    margin-top: 60px;
+    min-height: 70vh;
   }
 
   /* Professional Navigation - Optimized */
@@ -290,6 +290,10 @@
     @apply bg-gradient-to-r from-electric-blue/20 to-neon-green/20 p-2 rounded-lg mb-2;
   }
 
+  .balance-showcase {
+    @apply bg-gradient-to-r from-electric-blue/10 to-neon-green/10 rounded-xl p-4 mb-4 border border-electric-blue/20;
+  }
+
   .quick-actions {
     @apply flex gap-1 mb-2;
   }
@@ -440,24 +444,24 @@
 
   /* Reduced Typography Scale */
   .text-hero {
-    font-size: clamp(28px, 6vw, 36px);
+    font-size: clamp(24px, 5vw, 32px);
     line-height: 1.2;
     font-weight: 700;
   }
 
   .text-section {
-    font-size: clamp(22px, 4vw, 28px);
+    font-size: clamp(20px, 4vw, 24px);
     line-height: 1.2;
     font-weight: 600;
   }
 
   .text-card-title {
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 600;
   }
 
   .text-body {
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 400;
     line-height: 1.6;
   }
@@ -501,23 +505,23 @@
 
 /* Section Spacing - Reduced and Optimized */
 section {
-  padding: 50px 0;
+  padding: 40px 0;
   position: relative;
 }
 
 /* Specific Section Styles */
 .app-demo-section {
-  padding: 60px 0;
+  padding: 50px 0;
   background: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
 }
 
 .gamification-section {
-  padding: 60px 0;
+  padding: 50px 0;
   background: var(--bg-secondary);
 }
 
 .waitlist-section {
-  padding: 80px 0 60px 0;
+  padding: 60px 0 50px 0;
   background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
 }
 
@@ -535,8 +539,9 @@ section {
   }
 
   .hero-section {
-    @apply pt-16 pb-12;
-    margin-top: 80px;
+    @apply pt-8 pb-8;
+    margin-top: 40px;
+    min-height: 60vh;
   }
 
   .screen-container {
@@ -560,11 +565,11 @@ section {
 
   /* Mobile Typography */
   .text-hero {
-    font-size: 24px;
+    font-size: 20px;
   }
   
   .text-section {
-    font-size: 20px;
+    font-size: 18px;
   }
 
   .glow-button {
@@ -574,7 +579,19 @@ section {
 
   /* Mobile Section Spacing */
   section {
+    padding: 30px 0;
+  }
+
+  .app-demo-section {
     padding: 40px 0;
+  }
+  
+  .gamification-section {
+    padding: 40px 0;
+  }
+  
+  .waitlist-section {
+    padding: 50px 0 40px 0;
   }
 
   .container-custom {

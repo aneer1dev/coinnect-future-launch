@@ -114,15 +114,26 @@ const HeroSection = () => {
         </div>
       </div>
 
-      {/* Floating Elements - Removed the overlapping "Level 5 Achieved!" */}
-      <div className="absolute top-16 left-8 glass-card p-3 floating delay-100 hidden xl:block">
-        <div className="w-6 h-6 bg-neon-green rounded-lg mb-1"></div>
-        <p className="text-xs text-gray-300">+12% this week</p>
+      {/* Floating Profile Card */}
+      <div className="absolute top-20 left-8 glass-card p-3 floating delay-100 hidden xl:block max-w-xs">
+        <div className="flex items-center space-x-3">
+          <div className="w-10 h-10 rounded-full bg-gradient-to-r from-electric-blue to-neon-green flex items-center justify-center">
+            <span className="text-white font-bold text-sm">R</span>
+          </div>
+          <div className="flex-1">
+            <h3 className="text-white font-semibold text-sm">Ritika Sharma</h3>
+            <p className="text-gray-400 text-xs">Premium Member</p>
+          </div>
+          <div className="text-right">
+            <p className="text-neon-green font-bold text-sm">₹24,580</p>
+            <p className="text-gray-400 text-xs">Balance</p>
+          </div>
+        </div>
       </div>
 
       <div className="absolute top-1/2 left-4 glass-card p-2 floating delay-400 hidden xl:block">
         <div className="text-center">
-          <div className="text-coinnect-amber font-bold text-sm">1,250</div>
+          <div className="text-coinnect-amber font-bold text-sm">2,480</div>
           <div className="text-xs text-gray-300">XP Points</div>
         </div>
       </div>
